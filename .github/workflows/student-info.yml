@@ -1,21 +1,26 @@
-name: Student Information Pipeline
+
+name: System Information Pipeline
 
 on:
   push:
     branches: [main]
 
 jobs:
-  student-info:
+  system-info:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Pipeline Started
-        run: echo "Student Information Pipeline Started"
+      - name: Display Starting Message
+        run: echo "Checking Runner Information"
 
-      - name: Display Student Information
-        run: cat student.txt
+      - name: Display Current Date and Time
+        run: date
 
-      - name: Pipeline Completed
-        run: echo "Pipeline Execution Completed"
+      - name: Display Working Directory
+        run: pwd
+
+      - name: List Available Files
+        run: ls -la
